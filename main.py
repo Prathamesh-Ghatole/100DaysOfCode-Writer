@@ -1,18 +1,25 @@
 import webbrowser
 import os
-import git
-import urllib.parse
-import dateutil
+import datetime
+import time
 import pyperclip
+import urllib.parse
+from os import system, name
+from colorama import Fore
+from colorama import Style
+# from rich.console import Console
+# console = Console()
 
-def dateConv(date):
-    #convert DDMMYYYY to "Month Date, Year" e.g.: "January 01, 2021"
-    date = (date)
-    day = (date[:2])
-    month = (date[2:4])
-    year = (date[4:])
+def progressBar(current, total, barLength = 20):
+    percent = float(current) * 100 / total
+    arrow   = '-' * int(percent/100 * barLength - 1) + '>'
+    spaces  = ' ' * (barLength - len(arrow))
 
-    months = {'01':'January',
+    print('Progress: [%s%s] %d %%' % (arrow, spaces, percent), end='\r')
+
+def retDateStr():
+    dt = str(datetime.datetime.now())
+    lst = {'01':'January',
     '02': 'February',
     '03': 'March',
     '04': 'April',
@@ -25,62 +32,77 @@ def dateConv(date):
     '11': 'November',
     '12': 'December'}
     
-    export = "{0} {1}, {2}".format(months[month], day, year)
-    return export
+    date = dt[8:10]
+    month = dt[5:7]
+    yr = dt[0:4]
 
-# def getText():
-#     # Get input text
-#     day = input("Enter Day Number: ")
+    date_formatted = '{} {}, {}'.format(lst[str(month)], date, yr)
+    return (str(date_formatted))
 
-#     date = input("\nEnter Date (DDMMYYYY): ")
-#     if (len(str(date))!=8):
-#         return print("Enter Valid Date!")
-#     date = dateConv(date)
-    
-#     progress = input("\nEnter Progress: ")
-    
-#     thoughts = input("\nEnter Thoughts/Comments: ")
-    
-#     link = input("\nEnter Link: ")
-#     if link=="":
-#         link="N/A"
-    
-#     return day, dateConv(date), progress, thoughts, link
+txt = """#100DaysOfCode
+🗓 DAY {} of 100: {}
 
-def getText():
-    # Get text input
-    # Implement character counter for tweets
-    # Make decent UI
-    
-    # return day, dateConv(date), progress, thoughts, link
+✔ Progress: {}
 
-def txtGen():
-    tweet_txt = """#100DaysOfCode
-    🗓 DAY REPLACE_day of 100: REPLACE_date
+🧠 Thoughts: {}
 
-    ✔ Progress: REPLACE_
+🔗 Link: {}"""
 
-    🧠 Thoughts:
+def inp():
+    DAY = input("> Enter Day Number: ")
+    DATE = retDateStr()
+    Progress = input("> Enter Progress: ")
+    Thoughts = input("> Enter Thoughts: ")
+    Link = input("> Enter Link: ")
 
-    🔗 Link: N/A"""
+    txt_fin = txt.format(DAY, DATE, Progress, Thoughts, Link)
 
-    git_txt = """## DAY REPLACE_day: REPLACE_date
+    return txt_fin
 
-    **Today's Progress**: REPLACE_prog
-
-    **Thoughts**: REPLACE_thoughts
-
-    **Link to work**: REPLACE_links"""
-
-def tweet(tweet_txt):
+def tweet(txt):
     txt = urllib.parse.quote(txt)
-    pre="https://twitter.com/intent/tweet?text="
-    webbrowser.open(twt)
+    pre="https://twitter.com/intent/tweet?text={}".format(txt)
+    webbrowser.open(pre)
 
-# tweet_txt, git_txt= getText()
-# tweet(tweet_txt)
-# pyperclip.copy(git_txt)
-# print("\nCopied Git Text to Clipboard!")
+def clear():
+  
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+  
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
-datevar = input("Enter Date to Parse: ")
-print(dateConv(datevar))
+clear()
+#exp = Final export
+exp = inp()
+print(f"\n{Fore.RED}Final Text:\n{Fore.GREEN}"+exp+f"{Style.RESET_ALL}")
+
+flag = 0
+#Copy Final Export to Clipboard
+time.sleep(1)
+while (flag==0): 
+    twt = input(f"\n{Fore.RED}Copy Text to Clipboard? [Y/n] {Style.RESET_ALL}")
+    if((twt=='Y') | (twt=='y') | (twt=='N') | (twt=='n') | (twt=='')):
+        if ((twt == 'Y')|(twt == 'y')|(twt=='')):
+            pyperclip.copy(exp)
+            print (f"\n{Fore.GREEN}Text Copied!\n{Style.RESET_ALL}Paste Anywhere.")
+            flag=1
+        elif((twt == 'N') | (twt == 'n')):
+            flag=1
+
+
+#Tweet[Y/n]?
+flag = 0
+time.sleep(1)
+while (flag==0): 
+    twt = input(f"\n{Fore.RED}Open new Tweet? [Y/n] {Style.RESET_ALL}")
+    if((twt=='Y') | (twt=='y') | (twt=='N') | (twt=='n') | (twt=='')):
+        if ((twt == 'Y')|(twt == 'y')|(twt=='')):
+            print(f"{Fore.GREEN}Opening new Tweet.{Style.RESET_ALL}")
+            time.sleep(1)
+            tweet(exp)
+            flag=1
+        elif((twt == 'N') | (twt == 'n')):
+            flag=1

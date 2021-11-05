@@ -14,6 +14,7 @@
 - Multiple Presets
 - Userdefined Presets
 
+![Demo Video V1.0](https://github.com/Prathamesh-Ghatole/100DaysOfCode-Writer/blob/master/img/rec_v1.0.gif)
 
 # How to use
 ### Prerequisites
@@ -24,7 +25,6 @@
 - If you have multiple versions of python installed, use
 ```python3 install -r requirements.txt```
 
-https://github.com/Prathamesh-Ghatole/100DaysOfCode-Writer/blob/master/img/rec1_v1.0.mp4
 
 ### Final
 - Run the script!

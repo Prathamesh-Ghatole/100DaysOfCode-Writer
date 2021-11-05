@@ -1,3 +1,5 @@
+![Demo Image Main](https://github.com/Prathamesh-Ghatole/100DaysOfCode-Writer/blob/master/img/complete.png)
+
 # Usage
 - Generate Daily #100DaysOfCode content using a defined preset.
 - Auto-Input Date.
@@ -9,6 +11,8 @@
 - GitHub Log integration
 - Live Character Counter for twitter
 - New, Beautiful, & Improved CLI UI!
+- Multiple Presets
+- Userdefined Presets
 
 
 # How to use

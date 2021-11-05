@@ -8,6 +8,7 @@
 - Advanced Calendar tracker
 - GitHub Log integration
 - Live Character Counter for twitter
+- New, Beautiful, & Improved CLI UI!
 
 
 # How to use

@@ -6,7 +6,7 @@
 
 ### Coming soon:
 - Advanced Calendar tracker
-- GitHub Repo integration
+- GitHub Log integration
 - Live Character Counter for twitter
 
 
@@ -28,7 +28,3 @@ or
 ## Versions
 ### V1.0
 - First Working Model Ready
-
-## Plans:
-- Single input => Auto open tweet window + Copy Github Material to Clipboard.
-- Potentially update git log as well.

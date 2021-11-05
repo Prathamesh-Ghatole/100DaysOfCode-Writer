@@ -24,7 +24,7 @@
 - If you have multiple versions of python installed, use
 ```python3 install -r requirements.txt```
 
-![Demo Video Main V1.0](https://github.com/Prathamesh-Ghatole/100DaysOfCode-Writer/blob/master/img/rec1_v1.0.mp4)
+https://github.com/Prathamesh-Ghatole/100DaysOfCode-Writer/blob/master/img/rec1_v1.0.mp4
 
 ### Final
 - Run the script!

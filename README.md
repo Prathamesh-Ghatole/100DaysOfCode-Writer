@@ -11,6 +11,8 @@
 - GitHub Log integration
 - Live Character Counter for twitter
 - New, Beautiful, & Improved CLI UI!
+- Multiple Presets
+- Userdefined Presets
 
 
 # How to use

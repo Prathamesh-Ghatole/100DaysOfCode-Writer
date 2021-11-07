@@ -14,7 +14,11 @@
 - Multiple Presets
 - Userdefined Presets
 
+<<<<<<< HEAD
 ![Demo Gif V1.0](https://github.com/Prathamesh-Ghatole/100DaysOfCode-Writer/blob/master/img/rec_v1.0.gif)
+=======
+![Demo Video V1.0](https://github.com/Prathamesh-Ghatole/100DaysOfCode-Writer/blob/master/img/rec1_v1.0.gif)
+>>>>>>> 86f1f8e2ab43e7b5a8e67a4a972b1864952a9b41
 
 # How to use
 ### Prerequisites

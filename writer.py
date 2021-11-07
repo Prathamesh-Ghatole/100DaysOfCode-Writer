@@ -81,7 +81,6 @@ print(f"\n{Fore.RED}Final Text:\n{Fore.GREEN}"+exp+f"{Style.RESET_ALL}")
 
 flag = 0
 #Copy Final Export to Clipboard
-time.sleep(1)
 while (flag==0): 
     twt = input(f"\n{Fore.RED}Copy Text to Clipboard? [Y/n] {Style.RESET_ALL}")
     if((twt=='Y') | (twt=='y') | (twt=='N') | (twt=='n') | (twt=='')):
@@ -95,7 +94,6 @@ while (flag==0):
 
 #Tweet[Y/n]?
 flag = 0
-time.sleep(1)
 while (flag==0): 
     twt = input(f"\n{Fore.RED}Open new Tweet? [Y/n] {Style.RESET_ALL}")
     if((twt=='Y') | (twt=='y') | (twt=='N') | (twt=='n') | (twt=='')):

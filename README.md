@@ -23,6 +23,7 @@
 ```python install -r requirements.txt```
 - If you have multiple versions of python installed, use
 ```python3 install -r requirements.txt```
+- Tip: You can optionally add the path to the script's folder to environment variables for quick access. [Windows]
 
 
 ### Final
